@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pkill -f \"vite\")",
+      "Bash(find . -type f ! -path \"./node_modules/*\" ! -path \"./dist/*\" -exec md5sum {})",
+      "Bash(grep -E \"\\\\.\\(jpg|svg|png\\)$\")"
+    ]
+  }
+}

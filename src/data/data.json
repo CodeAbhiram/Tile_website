@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Marble Finish Floor Tile",
+    "category": "Floor",
+    "image": "/images/marble-floor.jpg",
+    "description": "Elegant marble finish floor tiles with a polished surface. Perfect for living rooms and lobbies.",
+    "size": "600x600 mm"
+  },
+  {
+    "id": 2,
+    "name": "Subway Wall Tile",
+    "category": "Wall",
+    "image": "/images/subway-wall.jpg",
+    "description": "Classic white subway tiles for timeless kitchen and bathroom walls.",
+    "size": "300x600 mm"
+  },
+  {
+    "id": 3,
+    "name": "Mosaic Bathroom Tile",
+    "category": "Bathroom",
+    "image": "/images/mosaic-bathroom.jpg",
+    "description": "Colorful mosaic tiles designed for bathroom floors and shower walls.",
+    "size": "300x300 mm"
+  },
+  {
+    "id": 4,
+    "name": "Wooden Deck Tile",
+    "category": "Outdoor",
+    "image": "/images/wooden-outdoor.jpg",
+    "description": "Anti-slip wooden pattern tiles ideal for patios and outdoor walkways.",
+    "size": "600x600 mm"
+  },
+  {
+    "id": 5,
+    "name": "Matte Floor Tile",
+    "category": "Floor",
+    "image": "/images/matte-floor.jpg",
+    "description": "Modern matte finish floor tiles with excellent scratch resistance.",
+    "size": "800x800 mm"
+  },
+  {
+    "id": 6,
+    "name": "Textured Wall Panel",
+    "category": "Wall",
+    "image": "/images/textured-wall.jpg",
+    "description": "3D textured wall tiles that add depth and character to any space.",
+    "size": "400x800 mm"
+  },
+  {
+    "id": 7,
+    "name": "Anti-Slip Bathroom Tile",
+    "category": "Bathroom",
+    "image": "/images/antislip-bathroom.jpg",
+    "description": "High-grip bathroom tiles with water-resistant coating for safety.",
+    "size": "400x400 mm"
+  },
+  {
+    "id": 8,
+    "name": "Granite Outdoor Paver",
+    "category": "Outdoor",
+    "image": "/images/granite-outdoor.jpg",
+    "description": "Heavy-duty granite pavers that withstand all weather conditions.",
+    "size": "600x900 mm"
+  }
+]
