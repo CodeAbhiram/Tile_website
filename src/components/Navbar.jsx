@@ -16,8 +16,28 @@ function Navbar() {
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="navbar-content">
-        <Link to="/" className="logo">TileCraft</Link>
+    <div className="navbar-content">
+    <div
+      className="logo-container"
+      style={{
+        display: "flex",
+        alignItems: "center"
+      }}
+    >
+      <Link to="/" style={{ display: "flex", alignItems: "center" }}>
+        <img
+          src="/images/logo.png"
+          alt="Raaya Logo"
+          style={{
+            height: "115px",   // 👈 increased size
+            width: "auto",
+            objectFit: "contain",
+            opacity: 0.95,
+            cursor: "pointer"
+          }}
+        />
+      </Link>
+    </div>
         <ul className="nav-links">
           <li>
             <Link to="/" className={location.pathname === '/' ? 'active' : ''}>

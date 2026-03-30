@@ -1,30 +1,27 @@
 import { useState, useEffect } from 'react';
 import Hero from '../components/Hero';
 import Categories from '../components/Categories';
+import FAQ from '../components/FAQ';
 import ContactModal from '../components/ContactModal';
 
 function Home() {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    // Check if user has already submitted the contact form
     const hasSubmitted = localStorage.getItem('contactFormSubmitted');
     if (!hasSubmitted) {
-      // Show modal after a short delay for better UX
       const timer = setTimeout(() => {
         setShowModal(true);
-      }, 2000);
+      }, 3000);
       return () => clearTimeout(timer);
     }
   }, []);
 
   const handleCloseModal = () => {
     setShowModal(false);
-    // Do NOT set localStorage here - we want it to show again if they just closed
   };
 
   const handleFormSuccess = () => {
-    // Only mark as submitted when the form is successfully sent
     localStorage.setItem('contactFormSubmitted', 'true');
     setShowModal(false);
   };
@@ -35,20 +32,20 @@ function Home() {
 
   const whyChooseUs = [
     {
-      title: 'Premium Quality',
-      description: 'Only the finest materials sourced from trusted suppliers.'
+      title: 'Curated Excellence',
+      description: 'Every tile in our collection is handpicked for exceptional quality and timeless design.'
     },
     {
-      title: 'Wide Selection',
-      description: 'Hundreds of designs and patterns to choose from.'
+      title: 'Design Expertise',
+      description: 'Our design consultants bring decades of experience to help you create your perfect space.'
     },
     {
-      title: 'Expert Advice',
-      description: 'Our team helps you choose the perfect tiles for your space.'
+      title: 'Timeless Quality',
+      description: 'We partner with master craftsmen to deliver tiles that endure through generations.'
     },
     {
-      title: 'Competitive Pricing',
-      description: 'Best prices without compromising on quality.'
+      title: 'Personal Service',
+      description: 'Your vision guides our process. We tailor every detail to reflect your unique style.'
     }
   ];
 
@@ -56,7 +53,6 @@ function Home() {
     <>
       <Hero />
 
-      {/* Floating reopen button */}
       <button className="floating-contact-btn" onClick={handleReopenModal} aria-label="Open contact form">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -67,7 +63,7 @@ function Home() {
 
       <section className="section why-us">
         <div className="container">
-          <h2 className="section-title">Why Choose Us</h2>
+          <h2 className="section-title">Why TileCraft</h2>
           <div className="why-us-grid">
             {whyChooseUs.map((item, index) => (
               <div key={index} className="why-us-item">
@@ -78,6 +74,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <FAQ />
 
       {showModal && <ContactModal onClose={handleCloseModal} onSuccess={handleFormSuccess} />}
     </>

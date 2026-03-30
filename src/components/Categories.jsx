@@ -1,22 +1,22 @@
 const categories = [
   {
     title: 'Floor Tiles',
-    description: 'Durable and elegant tiles designed to withstand heavy foot traffic while enhancing your space.',
+    description: 'Timeless elegance for your floors. Crafted to endure, designed to inspire.',
     icon: '⬜'
   },
   {
     title: 'Wall Tiles',
-    description: 'Stylish designs and finishes that elevate any interior wall with timeless elegance.',
+    description: 'Transform your walls into art. Sophisticated finishes for every room.',
     icon: '🧱'
   },
   {
     title: 'Bathroom Tiles',
-    description: 'Water-resistant and anti-slip options perfect for wet areas and bathrooms.',
+    description: 'Create your personal sanctuary. Water-resistant beauty for serene spaces.',
     icon: '🚿'
   },
   {
     title: 'Outdoor Tiles',
-    description: 'Weather-resistant pavers and tiles built to withstand the elements outdoors.',
+    description: 'Extend your living outdoors. Durable luxury that withstands the elements.',
     icon: '🌿'
   }
 ];
@@ -25,7 +25,7 @@ function Categories() {
   return (
     <section className="section">
       <div className="container">
-        <h2 className="section-title">Browse by Category</h2>
+        <h2 className="section-title">Our Collections</h2>
         <div className="categories-grid">
           {categories.map((category, index) => (
             <div key={index} className="category-card">
