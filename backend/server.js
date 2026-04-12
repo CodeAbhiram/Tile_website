@@ -1,13 +1,12 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import nodemailer from "nodemailer";
+import SibApiV3Sdk from "sib-api-v3-sdk";
 
 dotenv.config();
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
@@ -17,53 +16,39 @@ app.get("/", (req, res) => {
 });
 
 
-// 🔥 FIXED MAIL TRANSPORTER (NO "service: gmail")
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true, // must be true for port 465
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-  connectionTimeout: 10000, // 10s
-  greetingTimeout: 10000,
-  socketTimeout: 10000,
-});
+// 🔥 Brevo setup
+const client = SibApiV3Sdk.ApiClient.instance;
+const apiKey = client.authentications["api-key"];
+apiKey.apiKey = process.env.BREVO_API_KEY;
+
+const emailApi = new SibApiV3Sdk.TransactionalEmailsApi();
 
 
-// 🔥 VERIFY CONNECTION ON START (IMPORTANT)
-transporter.verify((err, success) => {
-  if (err) {
-    console.error("❌ SMTP ERROR:", err);
-  } else {
-    console.log("✅ SMTP READY");
-  }
-});
-
-
-// 🔥 API ROUTE
+// 🔥 API route
 app.post("/api/contact", async (req, res) => {
-  console.log("📩 Incoming request:", req.body);
+  console.log("📩 Incoming:", req.body);
 
   const { name, phone, message } = req.body;
 
   if (!name || !phone || !message) {
-    return res.status(400).json({
-      success: false,
-      message: "All fields required",
-    });
+    return res.status(400).json({ success: false });
   }
 
   try {
-    console.log("⏳ Sending email...");
+    console.log("⏳ Sending email via Brevo...");
 
-    // ⏱️ Timeout wrapper to prevent hanging
-    const mailPromise = transporter.sendMail({
-      from: `"Website Inquiry" <${process.env.EMAIL_USER}>`,
-      to: process.env.CLIENT_EMAIL,
+    await emailApi.sendTransacEmail({
+      sender: {
+        name: "Raya New Client",
+        email: process.env.CLIENT_EMAIL, // ⚠️ MUST be verified in Brevo
+      },
+      to: [
+        {
+          email: process.env.CLIENT_EMAIL,
+        },
+      ],
       subject: `New Inquiry - ${name}`,
-      html: `
+      htmlContent: `
         <div style="font-family: Arial, sans-serif; padding: 20px;">
           <h2 style="color:#a67c63;">New Customer Inquiry</h2>
 
@@ -84,19 +69,12 @@ app.post("/api/contact", async (req, res) => {
       `,
     });
 
-    const timeoutPromise = new Promise((_, reject) =>
-      setTimeout(() => reject(new Error("Email timeout after 10s")), 10000)
-    );
-
-    await Promise.race([mailPromise, timeoutPromise]);
-
     console.log("✅ Email sent successfully");
 
     return res.status(200).json({ success: true });
 
   } catch (error) {
-    console.error("❌ FULL ERROR:", error);
-    console.error("❌ MESSAGE:", error.message);
+    console.error("❌ Brevo Error:", error.response?.body || error.message);
 
     return res.status(500).json({
       success: false,
@@ -106,7 +84,7 @@ app.post("/api/contact", async (req, res) => {
 });
 
 
-// 🔥 START SERVER (Render-compatible)
+// Start server
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

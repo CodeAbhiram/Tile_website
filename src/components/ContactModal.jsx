@@ -59,14 +59,16 @@ function ContactModal({ onClose, onSuccess }) {
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
-        setIsSuccess(true);
-        setFormData({ name: '', phone: '', message: '' });
-        if (onSuccess) onSuccess();
+     if (response.ok) {
+  setIsSuccess(true);
+  setFormData({ name: '', phone: '', message: '' });
 
-        setTimeout(() => {
-          onClose();
-        }, 2000);
+  setIsSubmitting(false); // 👈 ADD THIS
+
+  setTimeout(() => {
+    onClose();  // close AFTER showing success
+  }, 2500);
+
       } else {
         setErrors({ submit: 'Failed to send message. Please try again.' });
         setIsSubmitting(false);
