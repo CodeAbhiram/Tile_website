@@ -25,7 +25,8 @@ function Categories() {
   return (
     <section className="section">
       <div className="container">
-        <h2 className="section-title">Our Collections</h2>
+        <h2 className="section-title">Find Tiles by Category</h2>
+        <p className="category-info">Raaya offers premium wall and floor Tiles,combining advanced technology with elegant designs for lasting quality and easy maintainance</p>
         <div className="categories-grid">
           {categories.map((category, index) => (
             <div key={index} className="category-card">

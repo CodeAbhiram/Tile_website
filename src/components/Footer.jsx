@@ -10,7 +10,7 @@ function Footer() {
       <div className="footer-content">
         <div className="footer-grid">
           <div className="footer-brand">
-            <h3>TileCraft</h3>
+            <h3>Raaya</h3>
             <p>Luxury tiles for discerning spaces. Curated collections that define elegance.</p>
           </div>
 

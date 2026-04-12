@@ -29,7 +29,7 @@ function Navbar() {
           src="/images/logo.png"
           alt="Raaya Logo"
           style={{
-            height: "115px",   // 👈 increased size
+            height: "80px",   // 👈 increased size
             width: "auto",
             objectFit: "contain",
             opacity: 0.95,

@@ -7,7 +7,7 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
-        <h1>Raaya</h1>
+        <h1>Raya</h1>
         <p>Luxury in every layer</p>
         <div className="hero-buttons">
           <Link to="/showcase" className="btn btn-primary">

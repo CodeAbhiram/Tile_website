@@ -7,21 +7,27 @@
 
 :root {
   /* Brand Colors */
-  --color-bg: #f5f0e8;
-  --color-primary: #a67c63;
-  --color-accent: #d8c3b5;
-  --color-text-dark: #2b2b2b;
-  --color-text-light: #6e6e6e;
-  --color-white: #ffffff;
-  --color-black: #000000;
+  /* Base */
+--color-bg: #ffffff;
+--color-surface: #fafafa;
 
-  /* Neutrals */
-  --color-gray-100: #f7f7f7;
-  --color-gray-200: #e5e5e5;
-  --color-gray-300: #d4d4d4;
-  --color-gray-400: #a3a3a3;
-  --color-gray-500: #737373;
-  --color-gray-600: #525252;
+/* Text */
+--color-text-dark: #111111;
+--color-text-light: #666666;
+--overlay-text-color:#E9E3DD;
+
+/* Brand (FIXED - stronger) */
+--color-primary: #8B5E3C;   /* deeper, richer */
+--color-accent: #C8A98D;    /* controlled warmth */
+
+/* Neutrals */
+--color-border: #e5e5e5;
+--color-gray-100: #f7f7f7;
+--color-gray-200: #eeeeee;
+--color-gray-300: #dddddd;
+--color-gray-400: #aaaaaa;
+--color-gray-500: #777777;
+--color-gray-600: #444444;
 
   /* Typography */
   --font-display: 'Playfair Display', Georgia, serif;
@@ -122,12 +128,13 @@ button {
 .navbar {
   position: sticky;
   top: 0;
-  background: rgba(245, 240, 232, 0.95);
+  background: rgba(255, 255, 255, 0.9); /* switch to white */
   backdrop-filter: blur(12px);
-  box-shadow: var(--shadow-sm);
-  padding: var(--space-5) 0;
+  border-bottom: 1px solid #e5e5e5;
   z-index: 1000;
-  transition: all var(--transition-base);
+  transition: all 0.3s ease;
+
+  padding: 12px 0;   /* 👈 controlled spacing */
 }
 
 .navbar.scrolled {
@@ -200,7 +207,7 @@ button {
 /* ==================== HERO ==================== */
 .hero {
   position: relative;
-  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-accent) 100%);
+  background:url('/images/heroimg.jpg') center/cover no-repeat;
   color: var(--color-text-dark);
   padding: var(--space-24) 0;
   text-align: center;
@@ -208,19 +215,20 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 0%, var(--color-bg) 100%);
-  opacity: 0.5;
+  background: rgba(0, 0, 0, 0.4); /* 👈 dark overlay */
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 900px;
   margin: 0 auto;
   padding: 0 var(--container-padding);
@@ -228,18 +236,18 @@ button {
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(var(--text-5xl), 6vw, var(--text-7xl));
+  font-size: clamp(var(--text-4xl), 6vw, var(--text-5xl));
   font-weight: 700;
   margin-bottom: var(--space-6);
   letter-spacing: -0.03em;
   line-height: 1.1;
-  color: var(--color-primary);
+  color: var(--overlay-text-color);
 }
 
 .hero p {
   font-size: clamp(var(--text-lg), 2.5vw, var(--text-2xl));
   margin-bottom: var(--space-12);
-  color: var(--color-text-light);
+  color: var(--overlay-text-color);
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -275,9 +283,9 @@ button {
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  border-color: var(--color-primary);
+  background-color: transparent;
+  color: var(--overlay-text-color);
+  border-color: var(--overlay-text-color);
 }
 
 .btn-primary:hover {
@@ -289,8 +297,8 @@ button {
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+  color: var(--overlay-text-color);
+  border-color: var(--overlay-text-color);
 }
 
 .btn-secondary:hover {
@@ -328,7 +336,7 @@ button {
   text-align: center;
   font-family: var(--font-display);
   font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-12);
   color: var(--color-primary);
   font-weight: 600;
 }
@@ -376,6 +384,13 @@ button {
   color: var(--color-text-light);
   font-size: var(--text-base);
   line-height: 1.7;
+}
+.category-info{
+  color: var(--color-text-light);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  margin-bottom: var(--space-12);
+  text-align: center;
 }
 
 /* ==================== WHY CHOOSE US ==================== */

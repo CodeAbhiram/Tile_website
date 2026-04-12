@@ -63,7 +63,7 @@ function Home() {
 
       <section className="section why-us">
         <div className="container">
-          <h2 className="section-title">Why TileCraft</h2>
+          <h2 className="section-title">Why Raaya</h2>
           <div className="why-us-grid">
             {whyChooseUs.map((item, index) => (
               <div key={index} className="why-us-item">

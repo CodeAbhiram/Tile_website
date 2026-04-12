@@ -50,10 +50,8 @@ function ContactModal({ onClose, onSuccess }) {
 
     setIsSubmitting(true);
 
-    const formspreeEndpoint = 'https://formspree.io/f/your-form-id';
-
     try {
-      const response = await fetch(formspreeEndpoint, {
+      const response = await fetch("http://localhost:5000/api/contact", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,7 +63,7 @@ function ContactModal({ onClose, onSuccess }) {
         setIsSuccess(true);
         setFormData({ name: '', phone: '', message: '' });
         if (onSuccess) onSuccess();
-        // Auto close after 2 seconds
+
         setTimeout(() => {
           onClose();
         }, 2000);
@@ -85,7 +83,6 @@ function ContactModal({ onClose, onSuccess }) {
     }
   };
 
-  // Success state UI
   if (isSuccess) {
     return (
       <div className="modal-overlay" onClick={handleOverlayClick}>
