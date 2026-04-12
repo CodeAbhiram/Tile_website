@@ -23,7 +23,7 @@
 }
 
 .modal-content {
-  background: white;
+  background: #ffff !important;
   border-radius: 12px;
   max-width: 500px;
   width: 100%;
@@ -33,6 +33,7 @@
   padding: 2rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   animation: slideUp 0.3s ease-out;
+  opacity: 1 !important;
 }
 
 @keyframes slideUp {
