@@ -3,7 +3,11 @@
     "id": 1,
     "name": "Marble Finish Floor Tile",
     "category": "Floor",
-    "image": "/images/marble-floor.jpg",
+    "images": [
+    "https://example.com/photo1.jpg",
+    "https://example.com/photo2.jpg",
+    "https://example.com/photo3.jpg"
+  ],
     "description": "Elegant marble finish floor tiles with a polished surface. Perfect for living rooms and lobbies.",
     "size": "600x600 mm"
   },
@@ -18,7 +22,7 @@
   {
     "id": 3,
     "name": "Mosaic Bathroom Tile",
-    "category": "Bathroom",
+    "category": "Sanitary",
     "image": "/images/mosaic-bathroom.jpg",
     "description": "Colorful mosaic tiles designed for bathroom floors and shower walls.",
     "size": "300x300 mm"

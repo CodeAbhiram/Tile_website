@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ProductCard from './ProductCard';
 
 function ProductGrid({ products }) {
-  const categories = ['All', 'Floor', 'Wall', 'Bathroom', 'Outdoor'];
+  const categories = ['All', 'Floor', 'Wall', 'Sanitary', 'CF Fittings'];
   const [activeCategory, setActiveCategory] = useState('All');
 
   const filteredProducts = activeCategory === 'All'
