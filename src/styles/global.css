@@ -207,7 +207,7 @@ button {
 /* ==================== HERO ==================== */
 .hero {
   position: relative;
-  background:url('/images/heroimg.jpg') center/cover no-repeat;
+  background:url('/images/heroimg.webp') center/cover no-repeat;
   color: var(--color-text-dark);
   padding: var(--space-24) 0;
   text-align: center;
