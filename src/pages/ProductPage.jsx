@@ -11,6 +11,7 @@ function ProductPage() {
   );
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [previewIndex, setPreviewIndex] = useState(null);
 
   if (!product) {
     return (
@@ -42,9 +43,12 @@ function ProductPage() {
     `I am interested in ${product.name} (${product.size})`
   )}`;
 
+  /* =========================
+     CAROUSEL CONTROLS
+  ========================= */
+
   const prev = () => {
     if (images.length <= 1) return;
-
     setCurrentIndex(
       (i) => (i - 1 + images.length) % images.length
     );
@@ -52,20 +56,38 @@ function ProductPage() {
 
   const next = () => {
     if (images.length <= 1) return;
-
     setCurrentIndex(
       (i) => (i + 1) % images.length
     );
   };
 
+  /* =========================
+     LIGHTBOX CONTROLS
+  ========================= */
+
+  const closePreview = () => setPreviewIndex(null);
+
+  const openPreview = () =>
+    setPreviewIndex(currentIndex);
+
+  const prevPreview = () =>
+    setPreviewIndex(
+      (i) => (i - 1 + images.length) % images.length
+    );
+
+  const nextPreview = () =>
+    setPreviewIndex(
+      (i) => (i + 1) % images.length
+    );
+
   return (
     <section className="section">
       <div className="container">
 
-        {/* Product Details */}
+        {/* ================= PRODUCT PAGE ================= */}
         <div className="product-page">
 
-          {/* Gallery */}
+          {/* ================= GALLERY ================= */}
           <div className="product-gallery">
             <div className="carousel">
 
@@ -81,9 +103,15 @@ function ProductPage() {
                       className="carousel-slide"
                       key={idx}
                     >
-                      <ImageSlide
+                      <img
                         src={src}
                         alt={`${product.name} ${idx + 1}`}
+                        loading="lazy"
+                        onError={(e) =>
+                          (e.target.style.display = "none")
+                        }
+                        className="clickable-image"
+                        onClick={openPreview}
                       />
                     </div>
                   ))
@@ -96,6 +124,7 @@ function ProductPage() {
                 )}
               </div>
 
+              {/* Navigation */}
               {images.length > 1 && (
                 <>
                   <span className="img-counter">
@@ -105,7 +134,6 @@ function ProductPage() {
                   <button
                     className="carousel-btn prev"
                     onClick={prev}
-                    aria-label="Previous image"
                   >
                     ‹
                   </button>
@@ -113,7 +141,6 @@ function ProductPage() {
                   <button
                     className="carousel-btn next"
                     onClick={next}
-                    aria-label="Next image"
                   >
                     ›
                   </button>
@@ -123,14 +150,11 @@ function ProductPage() {
                       <button
                         key={idx}
                         className={`dot ${
-                          idx === currentIndex
-                            ? "active"
-                            : ""
+                          idx === currentIndex ? "active" : ""
                         }`}
                         onClick={() =>
                           setCurrentIndex(idx)
                         }
-                        aria-label={`Go to image ${idx + 1}`}
                       />
                     ))}
                   </div>
@@ -139,26 +163,29 @@ function ProductPage() {
             </div>
           </div>
 
-          {/* Info */}
+          {/* ================= INFO ================= */}
           <div className="product-details">
             <div className="product-content">
-            <div className="product-category">
-              {product.category}
+
+              <div className="product-category">
+                {product.category}
+              </div>
+
+              <h1 className="product-name">
+                {product.name}
+              </h1>
+
+              <p className="product-description">
+                {product.description}
+              </p>
+
+              <p className="product-size">
+                Size: {product.size}
+              </p>
+
             </div>
 
-            <h1 className="product-name">
-              {product.name}
-            </h1>
-
-            <p className="product-description">
-              {product.description}
-            </p>
-
-            <p className="product-size">
-              Size: {product.size}
-            </p>
-            </div>
-             <a
+            <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -166,12 +193,54 @@ function ProductPage() {
             >
               Enquire on WhatsApp
             </a>
-            
           </div>
-            
         </div>
 
-        {/* Similar Products */}
+        {/* ================= LIGHTBOX ================= */}
+        {previewIndex !== null && (
+          <div
+            className="image-modal"
+            onClick={closePreview}
+          >
+
+            <button
+              className="modal-nav left"
+              onClick={(e) => {
+                e.stopPropagation();
+                prevPreview();
+              }}
+            >
+              ‹
+            </button>
+
+            <img
+              src={images[previewIndex]}
+              alt="preview"
+              className="image-modal-content"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            <button
+              className="modal-nav right"
+              onClick={(e) => {
+                e.stopPropagation();
+                nextPreview();
+              }}
+            >
+              ›
+            </button>
+
+            <button
+              className="close-btn"
+              onClick={closePreview}
+            >
+              ✕
+            </button>
+
+          </div>
+        )}
+
+        {/* ================= RELATED ================= */}
         {relatedProducts.length > 0 && (
           <div className="related-products section">
             <h2 className="section-title">
@@ -191,27 +260,6 @@ function ProductPage() {
 
       </div>
     </section>
-  );
-}
-
-function ImageSlide({ src, alt }) {
-  const [errored, setErrored] = useState(false);
-
-  if (errored) {
-    return (
-      <div className="img-fallback">
-        Image Not Available
-      </div>
-    );
-  }
-
-  return (
-    <img
-      src={src}
-      alt={alt}
-      loading="lazy"
-      onError={() => setErrored(true)}
-    />
   );
 }
 

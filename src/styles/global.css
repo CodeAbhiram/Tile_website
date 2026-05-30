@@ -963,6 +963,60 @@ button {
 .product-gallery {
   width: 100%;
 }
+.clickable-image {
+  cursor: zoom-in;
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.image-modal-content {
+  max-width: 92%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-nav.left { left: 20px; }
+.modal-nav.right { right: 20px; }
+
+.modal-nav:hover {
+  background: rgba(255,255,255,0.3);
+}
 /* ==========================
    FOOTER
 ========================== */
@@ -1152,6 +1206,42 @@ button {
   .modal-content {
     padding: var(--space-8);
     margin: var(--space-4);
+  }
+  .image-modal {
+    padding: 0;
+  }
+
+  .image-modal-content {
+    max-width: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .modal-nav {
+    width: 44px;
+    height: 44px;
+    font-size: 1.8rem;
+    background: rgba(0,0,0,0.3);
+  }
+
+  .modal-nav.left {
+    left: 10px;
+  }
+
+  .modal-nav.right {
+    right: 10px;
+  }
+
+  .close-btn {
+    top: 15px;
+    right: 15px;
+    width: 38px;
+    height: 38px;
+  }
+
+  /* prevent scroll bleed behind modal */
+  body {
+    overflow: hidden;
   }
    .footer {
     padding: 4rem 0 2rem;
