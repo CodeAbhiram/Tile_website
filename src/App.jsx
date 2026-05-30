@@ -1,19 +1,39 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Showcase from './pages/Showcase';
-import Footer from './components/Footer';
-import './styles/global.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+import Showcase from "./pages/Showcase";
+import ProductPage from "./pages/ProductPage";
+
+import "./styles/global.css";
 
 function App() {
   return (
     <Router>
       <div className="app">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/showcase" element={<Showcase />} />
-        </Routes>
+
+        <main>
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}
+            />
+
+            <Route
+              path="/showcase"
+              element={<Showcase />}
+            />
+
+            <Route
+              path="/product/:id"
+              element={<ProductPage />}
+            />
+          </Routes>
+        </main>
+
         <Footer />
       </div>
     </Router>
