@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import products from "../data/data.json";
 import ProductCard from "../components/ProductCard";
@@ -62,32 +62,55 @@ function ProductPage() {
   };
 
   /* =========================
-     LIGHTBOX CONTROLS
+     LIGHTBOX CONTROLS (SYNCED)
   ========================= */
+
+  const openPreview = () => setPreviewIndex(currentIndex);
 
   const closePreview = () => setPreviewIndex(null);
 
-  const openPreview = () =>
-    setPreviewIndex(currentIndex);
-
-  const prevPreview = () =>
-    setPreviewIndex(
-      (i) => (i - 1 + images.length) % images.length
+  const prevPreview = (e) => {
+    if (e) e.stopPropagation();
+    setPreviewIndex((i) =>
+      i === null
+        ? 0
+        : (i - 1 + images.length) % images.length
     );
+  };
 
-  const nextPreview = () =>
-    setPreviewIndex(
-      (i) => (i + 1) % images.length
+  const nextPreview = (e) => {
+    if (e) e.stopPropagation();
+    setPreviewIndex((i) =>
+      i === null
+        ? 0
+        : (i + 1) % images.length
     );
+  };
+
+  /* =========================
+     BODY SCROLL LOCK
+  ========================= */
+
+  useEffect(() => {
+    if (previewIndex !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [previewIndex]);
 
   return (
     <section className="section">
       <div className="container">
 
-        {/* ================= PRODUCT PAGE ================= */}
+        {/* ================= PRODUCT LAYOUT ================= */}
         <div className="product-page">
 
-          {/* ================= GALLERY ================= */}
+          {/* ================= CAROUSEL ================= */}
           <div className="product-gallery">
             <div className="carousel">
 
@@ -99,17 +122,11 @@ function ProductPage() {
               >
                 {images.length > 0 ? (
                   images.map((src, idx) => (
-                    <div
-                      className="carousel-slide"
-                      key={idx}
-                    >
+                    <div className="carousel-slide" key={idx}>
                       <img
                         src={src}
                         alt={`${product.name} ${idx + 1}`}
                         loading="lazy"
-                        onError={(e) =>
-                          (e.target.style.display = "none")
-                        }
                         className="clickable-image"
                         onClick={openPreview}
                       />
@@ -124,24 +141,18 @@ function ProductPage() {
                 )}
               </div>
 
-              {/* Navigation */}
+              {/* NAVIGATION */}
               {images.length > 1 && (
                 <>
                   <span className="img-counter">
                     {currentIndex + 1} / {images.length}
                   </span>
 
-                  <button
-                    className="carousel-btn prev"
-                    onClick={prev}
-                  >
+                  <button className="carousel-btn prev" onClick={prev}>
                     ‹
                   </button>
 
-                  <button
-                    className="carousel-btn next"
-                    onClick={next}
-                  >
+                  <button className="carousel-btn next" onClick={next}>
                     ›
                   </button>
 
@@ -152,9 +163,7 @@ function ProductPage() {
                         className={`dot ${
                           idx === currentIndex ? "active" : ""
                         }`}
-                        onClick={() =>
-                          setCurrentIndex(idx)
-                        }
+                        onClick={() => setCurrentIndex(idx)}
                       />
                     ))}
                   </div>
@@ -163,7 +172,7 @@ function ProductPage() {
             </div>
           </div>
 
-          {/* ================= INFO ================= */}
+          {/* ================= DETAILS ================= */}
           <div className="product-details">
             <div className="product-content">
 
@@ -205,10 +214,7 @@ function ProductPage() {
 
             <button
               className="modal-nav left"
-              onClick={(e) => {
-                e.stopPropagation();
-                prevPreview();
-              }}
+              onClick={prevPreview}
             >
               ‹
             </button>
@@ -222,10 +228,7 @@ function ProductPage() {
 
             <button
               className="modal-nav right"
-              onClick={(e) => {
-                e.stopPropagation();
-                nextPreview();
-              }}
+              onClick={nextPreview}
             >
               ›
             </button>
@@ -240,7 +243,7 @@ function ProductPage() {
           </div>
         )}
 
-        {/* ================= RELATED ================= */}
+        {/* ================= RELATED PRODUCTS ================= */}
         {relatedProducts.length > 0 && (
           <div className="related-products section">
             <h2 className="section-title">
