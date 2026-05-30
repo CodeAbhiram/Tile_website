@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
-  <rect width="600" height="600" fill="#8B4513"/>
-  <rect x="0" y="0" width="600" height="150" fill="#A0522D"/>
-  <rect x="0" y="150" width="600" height="150" fill="#8B4513"/>
-  <rect x="0" y="300" width="600" height="150" fill="#A0522D"/>
-  <rect x="0" y="450" width="600" height="150" fill="#8B4513"/>
-  <text x="300" y="305" font-family="Arial" font-size="24" fill="#fff" text-anchor="middle">Wooden Outdoor Tile</text>
-</svg>

@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
-  <rect width="600" height="600" fill="#95a5a6"/>
-  <rect x="0" y="0" width="300" height="300" fill="#7f8c8d"/>
-  <rect x="300" y="0" width="300" height="300" fill="#95a5a6"/>
-  <rect x="0" y="300" width="300" height="300" fill="#95a5a6"/>
-  <rect x="300" y="300" width="300" height="300" fill="#7f8c8d"/>
-  <text x="300" y="305" font-family="Arial" font-size="24" fill="#fff" text-anchor="middle">Matte Floor Tile</text>
-</svg>

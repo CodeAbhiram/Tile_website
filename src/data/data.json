@@ -1,12 +1,14 @@
 [
   {
     "id": 1,
-    "name": "Marble Finish Floor Tile",
+    "name": "Alaska White Onyx",
     "category": "Floor",
     "images": [
-    "https://example.com/photo1.jpg",
-    "https://example.com/photo2.jpg",
-    "https://example.com/photo3.jpg"
+    "/public/images/alaska-white-onyx.png",
+    "/public/images/white-onyx-bedroom.png",
+    "/public/images/white-onyx-hall.png",
+    "/public/images/white-onyx-bathroom.png",
+    "/public/images/alaska-white-onyx-catalogue.png"
   ],
     "description": "Elegant marble finish floor tiles with a polished surface. Perfect for living rooms and lobbies.",
     "size": "600x600 mm"
