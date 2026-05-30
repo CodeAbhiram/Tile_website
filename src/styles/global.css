@@ -975,8 +975,14 @@ button {
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  touch-action: none;
+  overscroll-behavior: contain;
 }
-
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
 .image-modal-content {
   max-width: 92%;
   max-height: 85vh;
@@ -1017,6 +1023,7 @@ button {
 .modal-nav:hover {
   background: rgba(255,255,255,0.3);
 }
+
 /* ==========================
    FOOTER
 ========================== */
@@ -1239,10 +1246,7 @@ button {
     height: 38px;
   }
 
-  /* prevent scroll bleed behind modal */
-  body {
-    overflow: hidden;
-  }
+
    .footer {
     padding: 4rem 0 2rem;
   }
