@@ -153,17 +153,14 @@ button {
 .logo-container{
   display: flex;
 }
-.logo-container img{
-  height:100vh;
-  width:100vh;
-}
 
-.logo {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-  font-weight: 700;
-  color: var(--color-primary);
-  letter-spacing: -0.02em;
+
+.nav-logo {
+  height: 80px;  
+  width: auto;
+  object-fit: contain;
+  opacity: 0.95;
+  cursor: pointer;
 }
 
 .nav-links {
@@ -329,7 +326,7 @@ button {
 
 /* ==================== SECTIONS ==================== */
 .section {
-  padding: var(--space-24) 0;
+  padding: var(--space-16) 0;
 }
 
 .section-title {
@@ -434,6 +431,7 @@ button {
   max-width: var(--container-max);
   margin: 0 auto;
 }
+
 
 /* ==================== PRODUCT CARD ==================== */
 .product-card {
@@ -940,114 +938,154 @@ button {
   outline-offset: 2px;
 }
 
-/* ==================== FOOTER ==================== */
+
+.product-page {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: stretch; /* important */
+}
+
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-content {
+  flex-grow: 1;
+}
+
+.btn-enquire {
+  margin-top: auto;
+}
+.product-gallery {
+  width: 100%;
+}
+/* ==========================
+   FOOTER
+========================== */
+
 .footer {
-  background-color: var(--color-text-dark);
-  color: var(--color-white);
-  padding: var(--space-20) 0 var(--space-8);
+  background: #0f0f0f;
+  color: #ffffff;
+  padding: 5rem 0 2rem;
+  margin-top: 6rem;
 }
 
 .footer-content {
-  max-width: var(--container-max);
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 var(--container-padding);
+  padding: 0 2rem;
 }
 
-.footer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-12);
-  margin-bottom: var(--space-12);
-}
-
-.footer-brand h3 {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-  margin-bottom: var(--space-4);
-  color: var(--color-white);
-}
-
-.footer-brand p {
-  color: var(--color-gray-400);
-  line-height: 1.8;
-  font-size: var(--text-base);
-}
-
-.footer-links h4 {
-  font-size: var(--text-lg);
-  font-weight: 600;
-  margin-bottom: var(--space-5);
-  color: var(--color-white);
-}
-
-.footer-links ul {
-  list-style: none;
-}
-
-.footer-links li {
-  margin-bottom: var(--space-3);
-}
-
-.footer-links a {
-  color: var(--color-gray-400);
-  transition: color var(--transition-fast);
-  font-size: var(--text-base);
-}
-
-.footer-links a:hover {
-  color: var(--color-accent);
-}
+/* ==========================
+   GRID
+========================== */
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space-12);
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 4rem;
+  padding-bottom: 3rem;
+}
+
+/* ==========================
+   BRAND
+========================== */
+
+.footer-brand h3 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
 .footer-brand p {
-  color: var(--color-gray-400);
-  line-height: 1.8;
-  margin-top: var(--space-4);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.9;
+  max-width: 28rem;
+  font-size: 0.95rem;
 }
 
-.footer-links a {
-  color: var(--color-gray-400);
-  transition: color var(--transition-fast);
-  font-size: var(--text-base);
+/* ==========================
+   HEADINGS
+========================== */
+
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
 }
 
-.footer-links a:hover {
-  color: var(--color-accent);
+/* ==========================
+   LINKS
+========================== */
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-contact {
-  color: var(--color-gray-400);
+.footer-links li {
+  margin-bottom: 1rem;
 }
+
+.footer-links a,
+.footer-contact a {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: #ffffff;
+  padding-left: 0.25rem;
+}
+
+/* ==========================
+   CONTACT
+========================== */
 
 .footer-contact p {
-  margin-bottom: var(--space-3);
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.8;
+  margin-bottom: 1rem;
 }
+
+/* ==========================
+   BOTTOM BAR
+========================== */
 
 .footer-bottom {
-  padding-top: var(--space-8);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: var(--text-sm);
-  color: var(--color-gray-500);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 2rem;
   text-align: center;
 }
-.product-page {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-12);
-  align-items: start;
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  margin: 0;
 }
 
-.product-gallery {
-  width: 100%;
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
 }
 
 
@@ -1055,7 +1093,7 @@ button {
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
   .navbar-content {
-    flex-direction: column;
+    flex-direction: row;
     gap: var(--space-3);
   }
 
@@ -1071,7 +1109,9 @@ button {
     padding: var(--space-16) 0;
     min-height: 60vh;
   }
-
+  .nav-logo{
+    height:45px;
+  }
   .hero-buttons {
     flex-direction: column;
     gap: var(--space-4);
@@ -1113,6 +1153,39 @@ button {
     padding: var(--space-8);
     margin: var(--space-4);
   }
+   .footer {
+    padding: 4rem 0 2rem;
+  }
+  .footer-logo{
+    height:45px;
+  }
+  .footer-content {
+    padding: 0 1.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+    
+  }
+  .footer-brand{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-brand p {
+    max-width: 100%;
+  }
+
+  .footer-links a:hover,
+  .footer-contact a:hover {
+    padding-left: 0;
+  }
+
+  .footer-bottom {
+    margin-top: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1128,6 +1201,7 @@ button {
   .footer {
     grid-template-columns: 1fr;
     text-align: center;
+
   }
 
   .footer-contact p {

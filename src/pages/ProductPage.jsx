@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import products from "../data/data.json";
+import ProductCard from "../components/ProductCard";
 
 function ProductPage() {
   const { id } = useParams();
 
-  // FIX: route params are strings
   const product = products.find(
     (item) => item.id === Number(id)
   );
@@ -28,6 +28,14 @@ function ProductPage() {
     ? [product.image]
     : [];
 
+  const relatedProducts = products
+    .filter(
+      (item) =>
+        item.category === product.category &&
+        item.id !== product.id
+    )
+    .slice(0, 4);
+
   const phoneNumber = "919876543210";
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
@@ -35,12 +43,16 @@ function ProductPage() {
   )}`;
 
   const prev = () => {
+    if (images.length <= 1) return;
+
     setCurrentIndex(
       (i) => (i - 1 + images.length) % images.length
     );
   };
 
   const next = () => {
+    if (images.length <= 1) return;
+
     setCurrentIndex(
       (i) => (i + 1) % images.length
     );
@@ -49,11 +61,14 @@ function ProductPage() {
   return (
     <section className="section">
       <div className="container">
+
+        {/* Product Details */}
         <div className="product-page">
 
-          {/* Product Gallery */}
+          {/* Gallery */}
           <div className="product-gallery">
             <div className="carousel">
+
               <div
                 className="carousel-track"
                 style={{
@@ -83,12 +98,10 @@ function ProductPage() {
 
               {images.length > 1 && (
                 <>
-                  {/* Counter */}
                   <span className="img-counter">
                     {currentIndex + 1} / {images.length}
                   </span>
 
-                  {/* Navigation */}
                   <button
                     className="carousel-btn prev"
                     onClick={prev}
@@ -105,7 +118,6 @@ function ProductPage() {
                     ›
                   </button>
 
-                  {/* Dots */}
                   <div className="carousel-dots">
                     {images.map((_, idx) => (
                       <button
@@ -127,8 +139,9 @@ function ProductPage() {
             </div>
           </div>
 
-          {/* Product Details */}
+          {/* Info */}
           <div className="product-details">
+            <div className="product-content">
             <div className="product-category">
               {product.category}
             </div>
@@ -144,8 +157,8 @@ function ProductPage() {
             <p className="product-size">
               Size: {product.size}
             </p>
-
-            <a
+            </div>
+             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -153,9 +166,29 @@ function ProductPage() {
             >
               Enquire on WhatsApp
             </a>
+            
           </div>
-
+            
         </div>
+
+        {/* Similar Products */}
+        {relatedProducts.length > 0 && (
+          <div className="related-products section">
+            <h2 className="section-title">
+              Similar Products
+            </h2>
+
+            <div className="product-grid">
+              {relatedProducts.map((item) => (
+                <ProductCard
+                  key={item.id}
+                  product={item}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
     </section>
   );

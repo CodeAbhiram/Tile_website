@@ -10,7 +10,7 @@ function ProductGrid({ products }) {
     : products.filter(p => p.category === activeCategory);
 
   return (
-    <section className="section">
+    <section className="section productshowpage">
       <div className="container">
         <h2 className="section-title">Our Collection</h2>
 

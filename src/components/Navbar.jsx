@@ -24,17 +24,12 @@ function Navbar() {
         alignItems: "center"
       }}
     >
-      <Link to="/" style={{ display: "flex", alignItems: "center" }}>
+      <Link to="/"  style={{ display: "flex", alignItems: "center" }}>
         <img
           src="/images/logo.png"
           alt="Raaya Logo"
-          style={{
-            height: "80px",   // 👈 increased size
-            width: "auto",
-            objectFit: "contain",
-            opacity: 0.95,
-            cursor: "pointer"
-          }}
+          className='nav-logo'
+         
         />
       </Link>
     </div>

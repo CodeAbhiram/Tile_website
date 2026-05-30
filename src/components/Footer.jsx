@@ -7,46 +7,76 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-grid">
-          <div className="footer-brand">
-            <h3>Raaya</h3>
-            <p>Luxury tiles for discerning spaces. Curated collections that define elegance.</p>
-          </div>
+  <div className="footer-content">
+    <div className="footer-grid">
 
-          <div className="footer-links">
-            <h4>Explore</h4>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/showcase">Collection</Link></li>
-            </ul>
-          </div>
-
-          <div className="footer-links">
-            <h4>Contact</h4>
-            <ul>
-              <li>
-                <a href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer">
-                  WhatsApp
-                </a>
-              </li>
-              <li>
-                <a href={`mailto:${email}`}>{email}</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="footer-contact">
-            <h4>Visit Us</h4>
-            <p>{address}</p>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} TileCraft. All rights reserved.</p>
-        </div>
+      <div className="footer-brand">
+            <div
+      className="logo-container"
+      style={{
+        display: "flex",
+        alignItems: "center"
+      }}
+    >
+      <Link to="/" style={{ display: "flex", alignItems: "center" }}>
+        <img
+          src="/images/logo.png"
+          alt="Raaya Logo"
+          className='footer-logo'
+        
+        />
+      </Link>
+    </div>
+        <p>
+          Luxury tiles for discerning spaces.
+          Curated collections that bring timeless
+          elegance to modern interiors.
+        </p>
       </div>
-    </footer>
+
+      <div className="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/showcase">Collection</Link></li>
+        </ul>
+      </div>
+
+      <div className="footer-contact">
+        <h4>Contact</h4>
+
+        <p>
+          <a
+            href={`https://wa.me/${phoneNumber}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp
+          </a>
+        </p>
+
+        <p>
+          <a href={`mailto:${email}`}>
+            {email}
+          </a>
+        </p>
+      </div>
+
+      <div className="footer-contact">
+        <h4>Showroom</h4>
+        <p>{address}</p>
+      </div>
+
+    </div>
+
+    <div className="footer-bottom">
+      <p>
+        © {new Date().getFullYear()} Raaya.
+        All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
   );
 }
 
