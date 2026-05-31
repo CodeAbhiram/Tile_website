@@ -15,9 +15,15 @@
   },
   {
     "id": 2,
-    "name": "Subway Wall Tile",
+    "name": "El Marka Wood Brown",
     "category": "Wall",
-    "image": "/images/subway-wall.jpg",
+    "images": [
+      "/images/wood-brown.png",
+      "/images/wood-brown-bed.png",
+      "/images/wood-brown-living.png",
+      "/images/wood-brown-kitchen.png",
+      "/images/wood-brown-bath.png"
+  ],
     "description": "Classic white subway tiles for timeless kitchen and bathroom walls.",
     "size": "300x600 mm"
   },
