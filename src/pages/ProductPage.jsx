@@ -99,15 +99,20 @@ function ProductPage() {
                 }}
               >
                 {images.map((src, idx) => (
-                  <div className="carousel-slide" key={idx}>
-                    <img
-                      src={src}
-                      alt={`${product.name} ${idx}`}
-                      className="clickable-image"
-                      onClick={openPreview}
-                    />
-                  </div>
-                ))}
+              <div
+                className={`carousel-slide ${
+                  idx === images.length - 1 ? "contain-slide" : ""
+                }`}
+                key={idx}
+              >
+                <img
+                  src={src}
+                  alt={`${product.name} ${idx}`}
+                  className="clickable-image"
+                  onClick={openPreview}
+                />
+              </div>
+            ))}
               </div>
 
               {images.length > 1 && (

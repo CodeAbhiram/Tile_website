@@ -18,61 +18,242 @@
     "name": "El Marka Wood Brown",
     "category": "Wall",
     "images": [
-      "/images/wood-brown.png",
       "/images/wood-brown-bed.png",
       "/images/wood-brown-living.png",
       "/images/wood-brown-kitchen.png",
-      "/images/wood-brown-bath.png"
+      "/images/wood-brown-bath.png",
+      "/images/wood-brown.png"
   ],
     "description": "Classic white subway tiles for timeless kitchen and bathroom walls.",
     "size": "300x600 mm"
   },
   {
     "id": 3,
-    "name": "Mosaic Bathroom Tile",
+    "name": "Athlone-grey",
     "category": "Sanitary",
-    "image": "/images/mosaic-bathroom.jpg",
+    "images": ["/images/Athlone-grey-bed.png",
+              "/images/Athlone-grey-bath.png",
+            "/images/Athlone-grey-kitchen.png",
+          "/images/Athlone-grey-cat.png"],
     "description": "Colorful mosaic tiles designed for bathroom floors and shower walls.",
     "size": "300x300 mm"
   },
   {
     "id": 4,
-    "name": "Wooden Deck Tile",
+    "name": "Aura Onyx",
     "category": "Outdoor",
-    "image": "/images/wooden-outdoor.jpg",
+    "images": ["/images/Aura-onyx-bed.png",
+  "/images/Aura-onyx-living.png",
+"/images/Aura-onyx-kitchen.png",
+"/images/Aura-onyx-cat.png"],
     "description": "Anti-slip wooden pattern tiles ideal for patios and outdoor walkways.",
     "size": "600x600 mm"
   },
   {
     "id": 5,
-    "name": "Matte Floor Tile",
+    "name": "Aura Onyx Azul",
     "category": "Floor",
-    "image": "/images/matte-floor.jpg",
+    "images": ["/images/Auro-Onyx-Azul-living.png",
+  "/images/Auro-Onyx-Azul-bed.png",
+"/images/Auro-Onyx-Azul-bath.png",
+"/images/Auro-Onyx-Azul-kitchen.png",
+"/images/Auro-Onyx-Azul-cat.png"],
     "description": "Modern matte finish floor tiles with excellent scratch resistance.",
     "size": "800x800 mm"
   },
-  {
+{
     "id": 6,
-    "name": "Textured Wall Panel",
-    "category": "Wall",
-    "image": "/images/textured-wall.jpg",
-    "description": "3D textured wall tiles that add depth and character to any space.",
-    "size": "400x800 mm"
+    "name": "Bottochino Beige",
+    "category": "Outdoor",
+    "images": [
+"/images/bottochino-beige-bed.png",
+
+"/images/bottochino-beige-living.png",
+"/images/bottochino-beige-kitchen.png",
+"/images/bottochino-beige-cat.png"],
+    "description": "Heavy-duty granite pavers that withstand all weather conditions.",
+    "size": "600x900 mm"
   },
   {
     "id": 7,
-    "name": "Anti-Slip Bathroom Tile",
+    "name": "Supreme Onyx",
     "category": "Bathroom",
-    "image": "/images/antislip-bathroom.jpg",
+    "images": ["/images/Supreme-Onyx-bath.png",
+  "/images/Supreme-Onyx-bed.png",
+"/images/Supreme-Onyx-kitchen.png",
+"/images/Supreme-Onyx-living.png",
+"/images/Supreme-Onyx-cat.png"],
     "description": "High-grip bathroom tiles with water-resistant coating for safety.",
     "size": "400x400 mm"
   },
   {
-    "id": 8,
-    "name": "Granite Outdoor Paver",
+    "id": 9,
+    "name": "Tecno beige",
     "category": "Outdoor",
-    "image": "/images/granite-outdoor.jpg",
+    "images": ["/images/Tecno-Beige-bath.png",
+  "/images/Tecno-Beige-bed.png",
+"/images/Tecno-Beige-kitchen.png",
+"/images/Tecno-Beige-living.png",
+"/images/Tecno-Beige-cat.png"],
+    "description": "Heavy-duty granite pavers that withstand all weather conditions.",
+    "size": "600x900 mm"
+  },
+  {
+    "id": 10,
+    "name": "Soft White",
+    "category": "Outdoor",
+    "images": ["/images/soft-white-bath.png",
+  "/images/soft-white-bed.png",
+"/images/soft-white-kitchen.png",
+"/images/soft-white-living.png",
+"/images/soft-white-cat.png"],
+    "description": "Heavy-duty granite pavers that withstand all weather conditions.",
+    "size": "600x900 mm"
+  },
+  {
+    "id": 11,
+    "name": "Staturio Hexa",
+    "category": "Outdoor",
+    "images": ["/images/Staturio-Hexa-bath.png",
+  "/images/Staturio-Hexa-bed.png",
+"/images/Staturio-Hexa-kitchen.png",
+"/images/Staturio-Hexa-living.png",
+"/images/Staturio-Hexa-cat.png"],
+    "description": "Heavy-duty granite pavers that withstand all weather conditions.",
+    "size": "600x900 mm"
+  },
+  {
+    "id": 12,
+    "name": "Tecno beige",
+    "category": "Outdoor",
+    "images": ["/images/Tecno-Beige-bath.png",
+  "/images/Tecno-Beige-bed.png",
+"/images/Tecno-Beige-kitchen.png",
+"/images/Tecno-Beige-living.png",
+"/images/Tecno-Beige-cat.png"],
+    "description": "Heavy-duty granite pavers that withstand all weather conditions.",
+    "size": "600x900 mm"
+  },
+  {
+    "id": 13,
+    "name": "Fenix Bianco",
+    "category": "Outdoor",
+    "images": ["/images/Fenix-Bianco-bath.jpg",
+  "/images/Fenix-Bianco-bed.jpg",
+"/images/Fenix-Bianco-kitchen.jpg",
+"/images/Fenix-Bianco-living.jpg",
+"/images/Fenix-Bianco-cat.jpg"],
+    "description": "Heavy-duty granite pavers that withstand all weather conditions.",
+    "size": "600x900 mm"
+  },
+  {
+    "id": 14,
+    "name": "Helios Gold",
+    "category": "Outdoor",
+    "images": ["/images/helios-gold-bath.png",
+  "/images/helios-gold-bed.png",
+"/images/helios-gold-kitchen.png",
+"/images/helios-gold--living.png",
+"/images/helios-gold-cat.png"],
+    "description": "Heavy-duty granite pavers that withstand all weather conditions.",
+    "size": "600x900 mm"
+  },
+  {
+    "id": 15,
+    "name": "Hickory beige",
+    "category": "Outdoor",
+    "images": [
+  "/images/Hickory-Beige-bed.jpg",
+"/images/Hickory-Beige-out.jpg",
+"/images/Hickory-Beige-living.jpg",
+"/images/Hickory-Beige-cat.jpg"],
+    "description": "Heavy-duty granite pavers that withstand all weather conditions.",
+    "size": "600x900 mm"
+  },
+  {
+    "id": 16,
+    "name": "Exotic Rush",
+    "category": "Outdoor",
+    "images": [
+  "/images/exotic-rush-bed.jpg",
+"/images/exotic-rush-bath.jpg",
+"/images/exotic-rush-living.jpg",
+"/images/exotic-rush--kitchen.jpg",
+"/images/exotic-rush-cat.jpg"
+],
+    "description": "Heavy-duty granite pavers that withstand all weather conditions.",
+    "size": "600x900 mm"
+  },
+  {
+    "id": 17,
+    "name": "El Vonida Wood Brown",
+    "category": "Outdoor",
+    "images": [
+   "/images/elvonida-wood-brown-livingroom.png",
+"/images/elvonida-bath.png",
+"/images/elvonida-wood-brown-corridor.png",
+"/images/elvonida-wood-brown-cat.png"],
+    "description": "Heavy-duty granite pavers that withstand all weather conditions.",
+    "size": "600x900 mm"
+  },
+  {
+    "id": 18,
+    "name": "El Kalik Wood Brown",
+    "category": "Outdoor",
+    "images": [
+   "/images/el-kalik-bed.png",
+"/images/el-kalik-dining.png",
+"/images/el-kalik-living.png",
+"/images/el-kalik-cat.png"],
+    "description": "Heavy-duty granite pavers that withstand all weather conditions.",
+    "size": "600x900 mm"
+  },
+  {
+    "id": 17,
+    "name": "El Vonida Wood Brown",
+    "category": "Outdoor",
+    "images": [
+   
+"/images/crema-marfil-dining.png",
+"/images/crema-marfil-living.png",
+"/images/crema-marfil-cat.png"],
+    "description": "Heavy-duty granite pavers that withstand all weather conditions.",
+    "size": "600x900 mm"
+  },
+  {
+    "id": 18,
+    "name": "Crema Luna",
+    "category": "Outdoor",
+    "images": [
+"/images/crema-luma-bed.png",
+"/images/crema-luna-living.png",
+"/images/crema-luna-cat.png"],
+    "description": "Heavy-duty granite pavers that withstand all weather conditions.",
+    "size": "600x900 mm"
+  },
+  {
+    "id": 19,
+    "name": "Crema Athlone",
+    "category": "Outdoor",
+    "images": [
+"/images/crema-athlone-dining.png",
+"/images/crema-athlone-kitchen.png",
+"/images/crema-athlone-cat.png"],
+    "description": "Heavy-duty granite pavers that withstand all weather conditions.",
+    "size": "600x900 mm"
+  },
+  {
+    "id": 20,
+    "name": "Crema Athlone",
+    "category": "Outdoor",
+    "images": [
+"/images/Camela-Crema-bed.png",
+"/images/Camela-Crema-bath.png",
+"/images/Camela-Crema-living.png",
+"/images/Camela-Crema-kitchen.png",
+"/images/Camela-Crema-cat.png"],
     "description": "Heavy-duty granite pavers that withstand all weather conditions.",
     "size": "600x900 mm"
   }
+
 ]
