@@ -17,17 +17,17 @@ function ProductCard({ product }) {
       style={{ cursor: "pointer" }}
     >
       {/* Product Image */}
-      <div className="carousel">
+      <div className="product-card-carousel">
         {images.length > 0 ? (
-          <div className="carousel-slide">
+          <div className="product-card-carousel-slide">
             <ImageSlide
               src={images[0]}
               alt={product.name}
             />
           </div>
         ) : (
-          <div className="carousel-slide">
-            <div className="img-fallback">
+          <div className="product-card-carousel-slide">
+            <div className="product-card-img-fallback">
               No Image Available
             </div>
           </div>

@@ -529,6 +529,13 @@ button {
           background: #f5f3f0;
           overflow: hidden;
         }
+        .product-card-carousel {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 4 / 3;
+          background: #f5f3f0;
+          overflow: hidden;
+        }
         .carousel-track {
           display: flex;
           height: 100%;
@@ -540,16 +547,36 @@ button {
           position: relative;
           flex-shrink: 0;
         }
+        .product-card-carousel-slide {
+          min-width: 100%;
+          height: 100%;
+          position: relative;
+          flex-shrink: 0;
+        }
         .carousel-slide img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          display: block;
+        }
+        .product-card-carousel-slide img {
           width: 100%;
           height: 100%;
           object-fit: cover;
           display: block;
         }
-        .contain-slide img {
-          object-fit: contain; /* only last image */
-        }
+
         .carousel-slide .img-fallback {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #bbb;
+          font-size: 0.85rem;
+          letter-spacing: 0.05em;
+        }
+        .product-card-carousel-slide .product-card-img-fallback {
           width: 100%;
           height: 100%;
           display: flex;
