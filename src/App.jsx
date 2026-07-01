@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Showcase from "./pages/Showcase";
 import ProductPage from "./pages/ProductPage";
-import ScrollToTop from "./scrollToTop";
+import ScrollToTop from "./ScrollToTop";
 import "./styles/global.css";
 
 function App() {
